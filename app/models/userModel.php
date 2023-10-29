@@ -31,7 +31,6 @@ class userModel {
         $passUser = $user['Password'];
         if(password_verify($passPost, $passUser)){
             $_SESSION['login']=true;
-            return 1;
         }
     }
 
