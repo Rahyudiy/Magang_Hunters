@@ -11,6 +11,8 @@ class Admin extends Controller
 
     public function index()
     {
+        require_once 'app/view/templates/header.php';
         $this->view('Admin', 'admin/index');
+        require_once 'app/view/templates/footer.php';
     }
 }

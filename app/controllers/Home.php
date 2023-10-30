@@ -8,17 +8,21 @@ class Home extends Controller
             header("Location: " . BASEURLJOBS . "/auth/login");
         }
     }
-    
+
     public function index()
     {
         $data['jobs'] = $this->model('jobModel')->getAllJob();
+        require_once 'app/view/templates/headerNav.php';
         $this->view('Home', 'home/index', $data);
+        require_once 'app/view/templates/footer.php';
     }
 
 
     public function detail($JobID)
-    {    
+    {
         $data['jobs'] = $this->model('jobModel')->getJobById($JobID);
+        require_once 'app/view/templates/headerNav.php';
         $this->view('Detail', 'home/detail', $data);
+        require_once 'app/view/templates/footer.php';
     }
 }
